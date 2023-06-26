@@ -65,6 +65,18 @@
         .result {
             margin-top: 20px;
         }
+
+        .image-container {
+            float: right;
+            max-width: 300px;
+            margin-left: 20px;
+            text-align: center;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -73,11 +85,17 @@
     <label for="text">Texto:</label>
     <input type="text" id="text" placeholder="Ingrese el texto">
     
-    <div class="result">
-        <label for="result">Resultado:</label>
-        <input type="text" id="result" readonly>
-        <button class="copy" onclick="copyResult()">Copiar</button>
+    <div class="image-container">
+        <img src="Imagen1.png" alt="Imagen" />
+
+        <div class="result">
+            <label for="result">Resultado:</label>
+            <input type="text" id="result" readonly>
+            <button class="copy" onclick="copyResult()">Copiar</button>
+        </div>
+
     </div>
+    
     
     <div class="button-container">
         <button class="encrypt-button" onclick="encryptText()">Encriptar</button>
