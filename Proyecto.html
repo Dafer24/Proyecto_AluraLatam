@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador y desencriptador de texto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: none;
+
+        }
+        
+        input[type="text"]:focus {
+            border-color: #0A3871;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 500px;
+        }
+        
+        button {
+            width: 10%;
+            height: 67px;
+            border-radius: 24px;
+            border: 1px;
+            padding: 24px;
+            gap: 8px;
+        }
+        
+        .encrypt-button {
+            background-color: #0A3871;
+
+        }
+        
+        .decrypt-button {
+            background-color: white;
+            color: #0A3871;
+        }
+
+        .copy {
+            background-color: white;
+            color: #0A3871;
+        }
+        
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Encriptador y desencriptador de texto</h1>
+    
+    <label for="text">Texto:</label>
+    <input type="text" id="text" placeholder="Ingrese el texto">
+    
+    <div class="result">
+        <label for="result">Resultado:</label>
+        <input type="text" id="result" readonly>
+        <button class="copy" onclick="copyResult()">Copiar</button>
+    </div>
+    
+    <div class="button-container">
+        <button class="encrypt-button" onclick="encryptText()">Encriptar</button>
+        <button class="decrypt-button" onclick="decryptText()">Desencriptar</button>
+    </div>
+    
+    <script>
+        function encryptText() {
+            var text = document.getElementById("text").value.toLowerCase();
+            var result = encrypt(text);
+            
+            document.getElementById("result").value = result;
+        }
+        
+        function decryptText() {
+            var text = document.getElementById("text").value.toLowerCase();
+            var result = decrypt(text);
+            
+            document.getElementById("result").value = result;
+        }
+        
+        function encrypt(text) {
+            text = text.replace(/e/g, "enter");
+            text = text.replace(/i/g, "imes");
+            text = text.replace(/a/g, "ai");
+            text = text.replace(/o/g, "ober");
+            text = text.replace(/u/g, "ufat");
+            
+            return text;
+        }
+        
+        function decrypt(text) {
+            text = text.replace(/enter/g, "e");
+            text = text.replace(/imes/g, "i");
+            text = text.replace(/ai/g, "a");
+            text = text.replace(/ober/g, "o");
+            text = text.replace(/ufat/g, "u");
+            
+            return text;
+        }
+        
+        function copyResult() {
+            var result = document.getElementById("result");
+            result.select();
+            result.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            alert("Texto copiado al portapapeles.");
+        }
+    </script>
+</body>
+</html>
