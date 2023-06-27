@@ -12,8 +12,17 @@
             background: var(--light-blue-light-blue-100, #F3F5FC);
         }
 
-        .image-t {
-            width: 220px;
+        .image-ta {
+            position: relative;
+            margin-left: 40px;
+            margin-top: 40px;
+            position: absolute;
+        top: 20px; /* Ajusta la posición vertical según sea necesario */
+        left: 20px; /* Ajusta la posición horizontal según sea necesario */
+        }
+
+        .image-ta .image-t {
+            width: 120px;
             height: 48px;
             flex-shrink: 0;
         }
@@ -27,7 +36,18 @@
             margin-bottom: 10px;
         }
         
-        input[type="text"] {
+        .input-container {
+            position: relative;
+            margin-left: 240px;
+            margin-top: 168px;
+        position: absolute;
+        top: 20px; /* Ajusta la posición vertical según sea necesario */
+        left: 20px; /* Ajusta la posición horizontal según sea necesario */
+        
+    }
+        
+
+        .input-container input[type="text"] {
             background: var(--color-main);
             height: 100%;
             width: 100%;
@@ -37,10 +57,11 @@
             border-color: none;
             font-family: Inter;
             font-weight: 400;
-            font-size: 38px;
+            font-size: 32px;
             color: var(--color-accent-1);
             resize: none;
-            text-align: 1000;
+            text-align: none ;
+            
         }
         
         input[type="text"]:focus {
@@ -89,19 +110,8 @@
             color: #0A3871;
         }
         
-        .image-container {
-            width: 400px;
-            height: 1000px; /* Aumenta la altura para hacer la imagen más larga */
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
         
-        .image-container img {
-            width: 100%;
-            height: 4000%;
-        }
+     
         
         .result {
             margin-top: 80px; /* Ajusta el valor para mover el resultado hacia abajo */
@@ -109,49 +119,86 @@
             flex-direction: column;
             align-items: center;
         }
+
+
+        .image-container {
+            width: 400px;
+            height: 944px; /* Aumenta la altura para hacer la imagen más larga */
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         
+
+        .image-container {
+            position: relative;
+            margin-left: 40px;
+            margin-top: 40px;
+        }
+        .image-container {
+            max-width: 90%;
+            height: auto;
+            margin: 40px auto; /* Ajusta los márgenes según sea necesario */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
         .image-container {
             float: right;
             max-width: 300px;
-            margin-left: 20px;
+            margin-left: 40px;
             text-align: center;
         }
+        
+         .image-container {
+            width: 400px;
+            height: 855px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+      
+
+        
         
         .image-container img {
             width: 100%;
             height: auto;
         }
 
-        .image-container {
-            width: 400px;
-            height: 944px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
+       
     </style>
 </head>
 <body>
     
-    <div class="image-t">
-        <img src="C:\Users\FABER\Desktop\proyecto alura\Proyecto_AluraLatam\Logo.png" alt="Imagen" />
+
+    <div class="image-container" style="border-radius: 32px; background: var(--white, #FFF); box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);">
+        <img src="C:\Users\exiao\OneDrive\Escritorio\Alura\Proyecto_AluraLatam-main\Imagen1.png" alt="Imagen" />
+
+        <div class="result">
+            <input type="text" id="internal-text" readonly>
+            <button class="copy" onclick="copyResult()">Copiar</button>
+        </div>
     </div>
-    
-    <input type="text" id="external-text" placeholder="Ingresa el texto aquí">
 
-<div class="image-container" style="border-radius: 32px; background: var(--white, #FFF); box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);">
-    <img src="C:\Users\FABER\Desktop\proyecto alura\Proyecto_AluraLatam\Imagen1.png" alt="Imagen" />
-
-    <div class="result">
-        <input type="text" id="internal-text" readonly>
-        <button class="copy" onclick="copyResult()">Copiar</button>
+    <div class="image-ta">
+        <img src="C:\Users\exiao\OneDrive\Escritorio\Alura\Proyecto_AluraLatam-main\Logo.png" alt="Imagen" class="image-t">
     </div>
-</div>
 
     
+  
     
+    <div class="input-container">
+        <input type="text" id="external-text" placeholder="Ingresa el texto aquí">
+    </div>
+
+
     <div class="button-container">
         <button class="encrypt-button" onclick="encryptText()">Encriptar</button>
         <span style="margin: 10px;"></span>
@@ -160,17 +207,17 @@
     
     <script>
         function encryptText() {
-            var text = document.getElementById("text").value.toLowerCase();
+            var text = document.getElementById("external-text").value.toLowerCase();
             var result = encrypt(text);
             
-            document.getElementById("result").value = result;
+            document.getElementById("internal-text").value = result;
         }
         
         function decryptText() {
-            var text = document.getElementById("text").value.toLowerCase();
+            var text = document.getElementById("external-text").value.toLowerCase();
             var result = decrypt(text);
             
-            document.getElementById("result").value = result;
+            document.getElementById("internal-text").value = result;
         }
         
         function encrypt(text) {
@@ -194,7 +241,7 @@
         }
         
         function copyResult() {
-            var result = document.getElementById("result");
+            var result = document.getElementById("internal-text");
             result.select();
             result.setSelectionRange(0, 99999);
             document.execCommand("copy");
@@ -202,16 +249,15 @@
         }
 
         const externalText = document.getElementById("external-text");
-    const internalText = document.getElementById("internal-text");
+        const internalText = document.getElementById("internal-text");
 
-    externalText.addEventListener("input", function() {
-        if (externalText.value.trim() !== "") {
-            internalText.value = "Ningun mensaje fue encontrado " + externalText.value;
-        } else {
-            internalText.value = "";
-        }
-    });
-
+        externalText.addEventListener("input", function() {
+            if (externalText.value.trim() !== "") {
+                internalText.value = "Ningun mensaje fue encontrado " + externalText.value;
+            } else {
+                internalText.value = "";
+            }
+        });
     </script>
 </body>
 </html>
