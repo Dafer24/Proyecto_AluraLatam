@@ -9,6 +9,13 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
+            background: var(--light-blue-light-blue-100, #F3F5FC);
+        }
+
+        .image-t {
+            width: 220px;
+            height: 48px;
+            flex-shrink: 0;
         }
         
         h1 {
@@ -21,11 +28,19 @@
         }
         
         input[type="text"] {
+            background: var(--color-main);
+            height: 100%;
             width: 100%;
-            padding: 5px;
-            margin-bottom: 10px;
-            border: none;
-
+            padding: 0;
+            border: 0;
+            outline: none;
+            border-color: none;
+            font-family: Inter;
+            font-weight: 400;
+            font-size: 38px;
+            color: var(--color-accent-1);
+            resize: none;
+            text-align: 1000;
         }
         
         input[type="text"]:focus {
@@ -35,24 +50,36 @@
         .button-container {
             display: flex;
             justify-content: center;
-            margin-top: 500px;
+            margin-top: 800px;
         }
         
         button {
-            width: 10%;
+            width: 40%;
             height: 67px;
-            border-radius: 24px;
+            border-radius: 25px;
             border: 1px;
             padding: 24px;
             gap: 8px;
         }
         
         .encrypt-button {
+            width: 328px;
+            height: 67px;
+            border-radius: 25px;
+            border: 1px;
+            padding: 24px;
+            gap: 8px;
             background-color: #0A3871;
 
         }
         
         .decrypt-button {
+            width: 328px;
+            height: 67px;
+            border-radius: 25px;
+            border: 1px;
+            padding: 24px;
+            gap: 8px;
             background-color: white;
             color: #0A3871;
         }
@@ -62,10 +89,27 @@
             color: #0A3871;
         }
         
-        .result {
-            margin-top: 20px;
+        .image-container {
+            width: 400px;
+            height: 1000px; /* Aumenta la altura para hacer la imagen más larga */
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
+        
+        .image-container img {
+            width: 100%;
+            height: 4000%;
+        }
+        
+        .result {
+            margin-top: 80px; /* Ajusta el valor para mover el resultado hacia abajo */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
         .image-container {
             float: right;
             max-width: 300px;
@@ -77,28 +121,40 @@
             width: 100%;
             height: auto;
         }
+
+        .image-container {
+            width: 400px;
+            height: 944px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
     </style>
 </head>
 <body>
-    <h1>Encriptador y desencriptador de texto</h1>
     
-    <label for="text">Texto:</label>
-    <input type="text" id="text" placeholder="Ingrese el texto">
-    
-    <div class="image-container">
-        <img src="Imagen1.png" alt="Imagen" />
-
-        <div class="result">
-            <label for="result">Resultado:</label>
-            <input type="text" id="result" readonly>
-            <button class="copy" onclick="copyResult()">Copiar</button>
-        </div>
-
+    <div class="image-t">
+        <img src="C:\Users\FABER\Desktop\proyecto alura\Proyecto_AluraLatam\Logo.png" alt="Imagen" />
     </div>
+    
+    <input type="text" id="external-text" placeholder="Ingresa el texto aquí">
+
+<div class="image-container" style="border-radius: 32px; background: var(--white, #FFF); box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);">
+    <img src="C:\Users\FABER\Desktop\proyecto alura\Proyecto_AluraLatam\Imagen1.png" alt="Imagen" />
+
+    <div class="result">
+        <input type="text" id="internal-text" readonly>
+        <button class="copy" onclick="copyResult()">Copiar</button>
+    </div>
+</div>
+
     
     
     <div class="button-container">
         <button class="encrypt-button" onclick="encryptText()">Encriptar</button>
+        <span style="margin: 10px;"></span>
         <button class="decrypt-button" onclick="decryptText()">Desencriptar</button>
     </div>
     
@@ -144,6 +200,18 @@
             document.execCommand("copy");
             alert("Texto copiado al portapapeles.");
         }
+
+        const externalText = document.getElementById("external-text");
+    const internalText = document.getElementById("internal-text");
+
+    externalText.addEventListener("input", function() {
+        if (externalText.value.trim() !== "") {
+            internalText.value = "Ningun mensaje fue encontrado " + externalText.value;
+        } else {
+            internalText.value = "";
+        }
+    });
+
     </script>
 </body>
 </html>
