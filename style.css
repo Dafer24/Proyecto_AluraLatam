@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: var(--light-blue-light-blue-100, #F3F5FC);
+}
+
+.image-ta {
+    position: relative;
+    margin-left: 40px;
+    margin-top: 40px;
+    position: absolute;
+top: 20px; /* Ajusta la posición vertical según sea necesario */
+left: 20px; /* Ajusta la posición horizontal según sea necesario */
+}
+
+.image-ta .image-t {
+    width: 120px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.input-container {
+    position: relative;
+    margin-left: 240px;
+    margin-top: 168px;
+position: absolute;
+top: 20px; /* Ajusta la posición vertical según sea necesario */
+left: 20px; /* Ajusta la posición horizontal según sea necesario */
+
+}
+
+
+.input-container input[type="text"] {
+    background: var(--color-main);
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    outline: none;
+    border-color: none;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--color-accent-1);
+    resize: none;
+    text-align: none ;
+    
+}
+
+input[type="text"]:focus {
+    border-color: #0A3871;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 800px;
+}
+
+button {
+    width: 40%;
+    height: 67px;
+    border-radius: 25px;
+    border: 1px;
+    padding: 24px;
+    gap: 8px;
+}
+
+.encrypt-button {
+    width: 328px;
+    height: 67px;
+    border-radius: 25px;
+    border: 1px;
+    padding: 24px;
+    gap: 8px;
+    background-color: #0A3871;
+
+}
+
+.decrypt-button {
+    width: 328px;
+    height: 67px;
+    border-radius: 25px;
+    border: 1px;
+    padding: 24px;
+    gap: 8px;
+    background-color: white;
+    color: #0A3871;
+}
+
+.copy {
+    background-color: white;
+    color: #0A3871;
+}
+
+
+
+
+.result {
+    margin-top: 80px; /* Ajusta el valor para mover el resultado hacia abajo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.image-container {
+    width: 400px;
+    height: 944px; /* Aumenta la altura para hacer la imagen más larga */
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.image-container {
+    position: relative;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+.image-container {
+    max-width: 90%;
+    height: auto;
+    margin: 40px auto; /* Ajusta los márgenes según sea necesario */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container {
+    float: right;
+    max-width: 300px;
+    margin-left: 40px;
+    text-align: center;
+}
+
+ .image-container {
+    width: 400px;
+    height: 855px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
