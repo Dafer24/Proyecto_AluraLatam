@@ -10,8 +10,8 @@ body {
     margin-left: 40px;
     margin-top: 40px;
     position: absolute;
-top: 20px; /* Ajusta la posición vertical según sea necesario */
-left: 20px; /* Ajusta la posición horizontal según sea necesario */
+top: 20px; 
+left: 20px; 
 }
 
 .image-ta .image-t {
@@ -31,11 +31,11 @@ label {
 
 .input-container {
     position: relative;
-    margin-left: 240px;
+    margin-left: 225px;
     margin-top: 168px;
 position: absolute;
-top: 20px; /* Ajusta la posición vertical según sea necesario */
-left: 20px; /* Ajusta la posición horizontal según sea necesario */
+top: 20px; 
+left: 20px; 
 
 }
 
@@ -99,65 +99,80 @@ button {
 }
 
 .copy {
-    background-color: white;
+    width: 150px;
+    height: 67px;
+    border-radius: 25px;
+    border: 1px;
+    padding: 24px;
+    gap: 8px;
+    background-color: whitesmoke;
     color: #0A3871;
+    margin-top: 370px;
 }
 
+.custom-button {
+    position: absolute;
+    bottom: 75px; 
+    transform: translateX(1%);
+  }
+  
 
 
-
-.result {
-    margin-top: 80px; /* Ajusta el valor para mover el resultado hacia abajo */
+  .result {
     display: flex;
     flex-direction: column;
+    align-self: stretch;
     align-items: center;
-}
+    margin: 0 auto; /* Centrar horizontalmente */
+    text-align: center; /* Centrar verticalmente */
+    word-wrap: break-word; /* Dividir palabras largas */
+    line-height: 1.2; /* Altura de línea */
+  }
+
+  .result p {
+    color: var(--gray-gray-500, #343A40);
+    text-align: center;
+    font-size: 24px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    margin: 0px 0; /* Ajusta el valor*/
+  }
+
+  .result #my-container  {
+    color: var(--gray-gray-400, #495057);
+    text-align: center;
+    font-size: 16px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
 
 
-.image-container {
-    width: 400px;
-    height: 944px; /* Aumenta la altura para hacer la imagen más larga */
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+input.no-border {
+    border: none;
+    outline: none;
+  }
+  
 
-
-.image-container {
-    position: relative;
-    margin-left: 40px;
-    margin-top: 40px;
-}
 .image-container {
     max-width: 90%;
     height: auto;
-    margin: 40px auto; /* Ajusta los márgenes según sea necesario */
+    margin: 40px auto; 
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.image-container {
-    float: right;
-    max-width: 300px;
-    margin-left: 40px;
-    text-align: center;
-}
-
- .image-container {
     width: 400px;
     height: 855px;
     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    float: right;
+    max-width: 300px;
+    margin-left: 40px;
 }
-
-
-
 
 
 .image-container img {
