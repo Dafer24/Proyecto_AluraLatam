@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background: var(--light-blue-light-blue-100, #F3F5FC);
+    background: var(--light-blue-light-blue-100, #F3F5FC); /* Establece el fondo de la página */
 }
 
 .image-ta {
@@ -65,6 +65,7 @@ input[type="text"]:focus {
     display: flex;
     justify-content: center;
     margin-top: 800px;
+    
 }
 
 button {
@@ -84,6 +85,7 @@ button {
     padding: 24px;
     gap: 8px;
     background-color: #0A3871;
+    border: 1px solid var(--dark-blue-dark-blue-300, #0A3871);
 
 }
 
@@ -96,6 +98,7 @@ button {
     gap: 8px;
     background-color: white;
     color: #0A3871;
+    border: 1px solid var(--dark-blue-dark-blue-300, #0A3871);
 }
 
 .copy {
