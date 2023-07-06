@@ -1,0 +1,17 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main #rama
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Build Jekyll Pages
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
