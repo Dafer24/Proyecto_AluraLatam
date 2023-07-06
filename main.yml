@@ -1,5 +1,0 @@
-- name: Build Jekyll Pages
-  uses: actions/jekyll-build-pages@v1
-  with:
-    source: ./
-    destination: ./_site
