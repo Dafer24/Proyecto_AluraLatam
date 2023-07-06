@@ -2,7 +2,7 @@ function encryptText() {
     var text = document.getElementById("external-text").value.toLowerCase();
     var result = encrypt(text);
     
-    document.getElementById("internal-text").value = result;
+    document.getElementById("internal-text").innerHTML = result;
 }
 
 function decryptText() {
@@ -10,7 +10,7 @@ function decryptText() {
     
     if (isEncrypted(text)) {
         var result = decrypt(text);
-        document.getElementById("internal-text").value = result;
+        document.getElementById("internal-text").innerHTML = result;
     } else {
         alert("El texto no está encriptado. No se puede desencriptar.");
     }
@@ -51,28 +51,18 @@ function isEncrypted(text) {
 }
 
 function copyResult() {
-    var result = document.getElementById("internal-text");
-    result.select();
-    result.setSelectionRange(0, 99999);
-    document.execCommand("copy");
-    alert("Texto copiado al portapapeles.");
-}
-
-/*
-const internalText = document.getElementById("internal-text");
-internalText.value = "Ningún mensaje fue encontrado";
-
-
-const externalText = document.getElementById("external-text");
-const internalText = document.getElementById("internal-text");
-
-externalText.addEventListener("input", function() {
-    if (externalText.value.trim() !== "") {
-        internalText.value = "";
-    } else {
-        internalText.value = "Ningún mensaje fue encontrado";
-    }
+    const internalText = document.getElementById("internal-text");
+    const resultText = internalText.innerText;
     
-});
-*/
-
+    // Crear un elemento de textarea temporal para copiar el resultado
+    const tempTextarea = document.createElement("textarea");
+    tempTextarea.value = resultText;
+    document.body.appendChild(tempTextarea);
+    
+    // Seleccionar y copiar el contenido del textarea temporal
+    tempTextarea.select();
+    document.execCommand("copy");
+    
+    // Eliminar el textarea temporal
+    document.body.removeChild(tempTextarea);
+  }

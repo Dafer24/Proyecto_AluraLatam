@@ -99,7 +99,7 @@ button {
 }
 
 .copy {
-    width: 150px;
+    width: 250px;
     height: 67px;
     border-radius: 25px;
     border: 1px;
@@ -108,6 +108,8 @@ button {
     background-color: whitesmoke;
     color: #0A3871;
     margin-top: 370px;
+    border-radius: 24px;
+    border: 1px solid var(--dark-blue-dark-blue-300, #0A3871);
 }
 
 .custom-button {
@@ -123,10 +125,16 @@ button {
     flex-direction: column;
     align-self: stretch;
     align-items: center;
-    margin: 0 auto; /* Centrar horizontalmente */
-    text-align: center; /* Centrar verticalmente */
-    word-wrap: break-word; /* Dividir palabras largas */
-    line-height: 1.2; /* Altura de línea */
+    margin: 0 auto; 
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 1.2; 
+    padding-top: 32px;
+  }
+
+ .result2 {
+        
+        padding-top: 16px;
   }
 
   .result p {
@@ -137,10 +145,10 @@ button {
     font-style: normal;
     font-weight: 700;
     line-height: 120%;
-    margin: 0px 0; /* Ajusta el valor*/
+    margin: 0px 0;
   }
 
-  .result #my-container  {
+  .result .message1 {
     color: var(--gray-gray-400, #495057);
     text-align: center;
     font-size: 16px;
@@ -148,6 +156,7 @@ button {
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
+    
   }
 
 
@@ -179,3 +188,5 @@ input.no-border {
     width: 100%;
     height: auto;
 }
+
+
